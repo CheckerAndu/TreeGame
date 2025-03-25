@@ -5,17 +5,20 @@ leaves = 0
 water = 0
 light = 0
 day_count = 0
+name = "NoWiggy"
 
 chosen_condition = ["Sunny", "Rainy", "Hot"]
 temperature = range(-10, 40)
 
-print("Woah, a new package arrived!")
-time.sleep(2)
-print("What is that?")
-time.sleep(3)
-print("No way! It's a plant!")
-time.sleep(3)
-name = input("How do you want to name your new plant?\n")
+def start():
+ global name
+ print("Woah, a new package arrived!")
+ time.sleep(3)
+ print("What is that?")
+ time.sleep(3)
+ print("No way! It's a plant!")
+ time.sleep(3)
+ name = input("How do you want to name your new plant?\n")
 
 def wait():
     time.sleep(2)
@@ -24,6 +27,17 @@ def wait():
     print("waiting for the next day..")
     time.sleep(1)
     print("waiting for the next day...")
+
+def temperature():
+    global name
+    global temperature
+    if temperature <= 0:
+        print(f"{name} is beginning to freeze") 
+        time.sleep(2)
+        print(f"{name} can't get any water, but will get much water, when it unfreezes")
+    
+
+
 
 def weather():
     global water
@@ -108,9 +122,11 @@ def random_day():
     temperature = random.randint(-10, 40)
     return condition, temperature
 
+
+
+start()
 time.sleep(2)
 print(f"Let's welcome {name} to the new world!")
-
 
 while True:
     condition, temperature = random_day()
@@ -126,12 +142,8 @@ while True:
     time.sleep(3)
     print(f"{name} has {water} water and {light} light")
     time.sleep(5)
-    print("It's getting dark.")
-    time.sleep(1)
-    print("It's getting dark..")
-    time.sleep(1)
-    print("It's getting dark...")
-    time.sleep(2)
+    print("It's getting dark")
+    time.sleep(3)
     print(f"{name} is sleeping")
     time.sleep(3)
     grow()
