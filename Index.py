@@ -75,8 +75,8 @@ def grow():
        print(f"{name} is able to grow leaves")
        time.sleep(3)
        print(f"Do you wish for {name}, to grow 2 leaves?")
-       choice = input("Yes\nNo\n")
-       if choice == "Yes":
+       choice = input("yes\nno\n")
+       if choice.lower == "yes":
            leaves = leaves + 2
            water = water - 1
            light = light - 2
